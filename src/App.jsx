@@ -34,6 +34,9 @@ function App() {
       )
     );
   };
+
+  const incompleteTasks = tasks.filter(task => !task.completed);
+
   // ==== JSX that gets returned =====
   return (
     <div className="container">
@@ -70,6 +73,9 @@ function App() {
           </li>
         ))}
       </ul>
+      <p className="task-counter">
+        {incompleteTasks.length} {incompleteTasks.length === 1 ? 'task' : 'tasks'} remaining
+      </p>
     </div>
   );
 }
